@@ -1,0 +1,49 @@
+{
+  "name": "@mobayilo/telegram-connect",
+  "version": "0.1.0",
+  "description": "Reusable Telegram account and group linking for web apps.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./schema": {
+      "import": "./dist/schema.js",
+      "types": "./dist/schema.d.ts"
+    },
+    "./adapters/drizzle": {
+      "import": "./dist/adapters/drizzle.js",
+      "types": "./dist/adapters/drizzle.d.ts"
+    },
+    "./adapters/memory": {
+      "import": "./dist/adapters/memory.js",
+      "types": "./dist/adapters/memory.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.0",
+    "zod": "^3.0.0 || ^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "drizzle-orm": "^0.45.0",
+    "typescript": "^5",
+    "zod": "^4.0.0"
+  },
+  "peerDependencies": {
+    "drizzle-orm": "^0.45.0",
+    "zod": "^3.0.0 || ^4.0.0"
+  },
+  "license": "MIT"
+}

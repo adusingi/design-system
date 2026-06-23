@@ -1,0 +1,13 @@
+# Mobayilo design-system monorepo. Each package is independently versioned and
+# published, but shares tooling and standards (see the frontend-system-design /
+# micro-frontends-and-design-systems modules in academy-mobayilo).
+packages:
+  - "telegram-connect"
+  - "themes"
+  - "auth-magic-link"
+
+# pnpm 11 treats an *ignored* build script as fatal in its pre-run deps check,
+# so every detected build must get an explicit true/false here.
+allowBuilds:
+  esbuild: true
+  sharp: true

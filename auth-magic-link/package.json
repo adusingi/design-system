@@ -1,0 +1,50 @@
+{
+  "name": "@mobayilo/auth-magic-link",
+  "version": "0.1.0",
+  "description": "Reusable passwordless auth for Next.js apps: Better Auth magic link + optional Google, ZeptoMail email, and a drop-in SignInForm.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./next": {
+      "types": "./dist/next.d.ts",
+      "import": "./dist/next.js"
+    },
+    "./sign-in-form": {
+      "types": "./dist/sign-in-form.d.ts",
+      "import": "./dist/sign-in-form.js"
+    },
+    "./styles.css": "./styles.css"
+  },
+  "files": [
+    "dist",
+    "styles.css"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "better-auth": "^1.2.0",
+    "next": "^15.0.0 || ^16.0.0",
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "better-auth": "^1.6.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}
