@@ -1,4 +1,4 @@
-import { betterAuth, type BetterAuthOptions } from "better-auth";
+import { betterAuth, type BetterAuthOptions, type BetterAuthPlugin } from "better-auth";
 import { magicLink } from "better-auth/plugins";
 import { nextCookies } from "better-auth/next-js";
 
@@ -8,7 +8,7 @@ export type MagicLinkSender = (data: {
   token: string;
 }) => Promise<void> | void;
 
-export type MagicLinkAuthOptions = {
+export type MagicLinkAuthOptions<TPlugins extends BetterAuthPlugin[] = []> = {
   /** Product name (Better Auth `appName`). */
   appName: string;
   /** App base URL, e.g. https://example.com. */
@@ -29,27 +29,18 @@ export type MagicLinkAuthOptions = {
   user?: BetterAuthOptions["user"];
   /** Lifecycle hooks (e.g. assign a username on create). */
   databaseHooks?: BetterAuthOptions["databaseHooks"];
-  /** Additional Better Auth plugins to append. */
-  plugins?: NonNullable<BetterAuthOptions["plugins"]>;
-  /** Append the Next.js cookie plugin. Default: true. */
-  nextCookies?: boolean;
+  /** Additional Better Auth plugins, inserted before nextCookies. */
+  plugins?: TPlugins;
 };
 
 // Passwordless auth (magic link + optional Google) with sensible mobayilo
 // defaults. Returns a fully-typed Better Auth instance; use `typeof auth` to
-// type the matching client (createMagicLinkAuthClient).
-export function createMagicLinkAuth(options: MagicLinkAuthOptions) {
-  const plugins: NonNullable<BetterAuthOptions["plugins"]> = [
-    magicLink({
-      expiresIn: options.magicLinkExpiresIn ?? 60 * 10,
-      sendMagicLink: async ({ email, url, token }) => {
-        await options.sendMagicLink({ email, url, token });
-      },
-    }),
-    ...(options.plugins ?? []),
-  ];
-  if (options.nextCookies !== false) plugins.push(nextCookies());
-
+// type the matching client. The plugin list is kept as a literal tuple
+// [magicLink, ...extra, nextCookies] so Better Auth infers endpoints
+// (e.g. auth.api.signInMagicLink) onto the returned type.
+export function createMagicLinkAuth<const TPlugins extends BetterAuthPlugin[] = []>(
+  options: MagicLinkAuthOptions<TPlugins>,
+) {
   return betterAuth({
     appName: options.appName,
     baseURL: options.baseURL,
@@ -61,7 +52,16 @@ export function createMagicLinkAuth(options: MagicLinkAuthOptions) {
     socialProviders: options.google ? { google: options.google } : undefined,
     user: options.user,
     databaseHooks: options.databaseHooks,
-    plugins,
+    plugins: [
+      magicLink({
+        expiresIn: options.magicLinkExpiresIn ?? 60 * 10,
+        sendMagicLink: async ({ email, url, token }) => {
+          await options.sendMagicLink({ email, url, token });
+        },
+      }),
+      ...(options.plugins ?? ([] as unknown as TPlugins)),
+      nextCookies(),
+    ],
   });
 }
 
