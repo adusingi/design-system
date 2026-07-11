@@ -1,0 +1,36 @@
+{
+  "name": "@mobayilo/mailpit",
+  "version": "0.1.0",
+  "description": "Framework-agnostic Mailpit integration: SMTP transport for local dev/test (drop-in for the ZeptoMail mailer) plus a REST-API inbox client for E2E tests.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    ".env.example",
+    "docker-compose.mailpit.yml"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "nodemailer": ">=6"
+  },
+  "peerDependenciesMeta": {
+    "nodemailer": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/nodemailer": "^6.4.0",
+    "nodemailer": "^6.9.0",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}

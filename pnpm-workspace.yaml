@@ -5,6 +5,7 @@ packages:
   - "telegram-connect"
   - "themes"
   - "auth-magic-link"
+  - "mailpit"
 
 # pnpm 11 treats an *ignored* build script as fatal in its pre-run deps check,
 # so every detected build must get an explicit true/false here.

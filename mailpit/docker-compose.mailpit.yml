@@ -1,0 +1,31 @@
+# Drop-in Mailpit service for local development. Either run it standalone:
+#
+#   docker compose -f docker-compose.mailpit.yml up -d
+#
+# …or copy the `mailpit:` service block into your project's compose file.
+# SMTP is exposed on 1025, the web UI + REST API on 8025 (http://localhost:8025).
+services:
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - "1025:1025" # SMTP
+      - "8025:8025" # Web UI + REST API
+    environment:
+      # Keep captured mail across restarts (optional).
+      MP_DATABASE: /data/mailpit.db
+      MP_MAX_MESSAGES: "5000"
+      # Anonymous SMTP for local dev. Uncomment to require auth and set
+      # MAILPIT_SMTP_USER/PASS in your app's .env to match.
+      # MP_SMTP_AUTH: "dev:dev"
+      # MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+    volumes:
+      - mailpit_data:/data
+    healthcheck:
+      test: ["CMD", "/mailpit", "readyz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mailpit_data:
