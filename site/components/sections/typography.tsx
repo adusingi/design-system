@@ -13,14 +13,14 @@ const SCALE: Array<{ token: string; sample: string }> = [
 export function Typography() {
   return (
     <section id="typography" className="mo-container mo-section">
-      <SectionHeader index="02" title="Typography" caption="System font stack for UI, monospace for code and values" />
+      <SectionHeader index="02" title="Typography" caption="Cormorant Garamond for headings, Inconsolata for everything else" />
 
       <div className="mo-gallery-grid" style={{ marginBottom: 40 }}>
         <div className="mo-panel">
-          <p className="mo-panel-label">Sans — --mo-font-sans</p>
+          <p className="mo-panel-label">Heading — --mo-font-heading</p>
           <p style={{ font: "var(--mo-text-display)", margin: 0 }}>Aa</p>
-          <p style={{ color: "var(--muted)", fontSize: "0.875rem", marginTop: 12 }}>
-            UI text, headings, body copy.
+          <p style={{ fontFamily: "var(--mo-font-sans)", color: "var(--muted)", fontSize: "0.875rem", marginTop: 12 }}>
+            Cormorant Garamond — display and headings only.
           </p>
         </div>
         <div
@@ -28,10 +28,10 @@ export function Typography() {
           style={{ background: "var(--foreground)", color: "var(--background)" }}
         >
           <p className="mo-panel-label" style={{ color: "color-mix(in srgb, var(--background) 60%, transparent)" }}>
-            Mono — --mo-font-mono
+            Sans / Mono — --mo-font-sans
           </p>
-          <p style={{ font: "var(--mo-text-h2)", fontFamily: "var(--mo-font-mono)", margin: 0 }}>academy · bento</p>
-          <p style={{ fontFamily: "var(--mo-font-mono)", fontSize: "0.8125rem", marginTop: 12, opacity: 0.7 }}>
+          <p style={{ font: "var(--mo-text-h2)", fontFamily: "var(--mo-font-heading)", margin: 0 }}>academy · bento</p>
+          <p style={{ fontFamily: "var(--mo-font-sans)", fontSize: "0.8125rem", marginTop: 12, opacity: 0.7 }}>
             network · umuzika · veronese
           </p>
         </div>

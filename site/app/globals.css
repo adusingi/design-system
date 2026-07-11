@@ -1,3 +1,11 @@
+:root {
+  /* Point the @mobayilo/ui defaults at the self-hosted next/font variables
+     (see app/layout.tsx) instead of the bare family names. */
+  --mo-font-heading: var(--font-cormorant-garamond), Georgia, serif;
+  --mo-font-sans: var(--font-inconsolata), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --mo-font-mono: var(--font-inconsolata), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
 * {
   box-sizing: border-box;
 }

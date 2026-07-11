@@ -43,7 +43,11 @@ scale as CSS variables in `styles.css`:
 - `--mo-radius-{sm,md,lg,full}`
 - `--mo-shadow-{sm,md,lg}` — elevation, layered on top of each theme's `--card-shadow`
 - `--mo-text-{display,h1,h2,h3,body-lg,body,caption}` — `font` shorthand custom properties
-- `--mo-font-{sans,mono}` — override per project if you don't want the system stack
+- `--mo-font-{heading,sans,mono}` — default to the pairing already hardcoded identically in
+  `mobayilo`, `academy-mobayilo`, and `inkoranyamuga`: **Cormorant Garamond** for
+  display/headings, **Inconsolata** for everything else (body, UI chrome, values).
+  Override per project if you want something else; a project using `next/font`
+  should point these at the generated font variable rather than a bare family name.
 
 ## Develop
 

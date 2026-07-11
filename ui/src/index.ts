@@ -28,6 +28,14 @@ export { FormField, type FormFieldProps } from "./form-field.js";
 export { Alert, type AlertProps, type AlertVariant } from "./alert.js";
 
 export {
+  EntryCard,
+  type EntryCardProps,
+  type EntryCardMeta,
+  type EntryCardAction,
+  type EntryCardActionVariant,
+} from "./entry-card.js";
+
+export {
   Dialog,
   DialogHeader,
   DialogTitle,
