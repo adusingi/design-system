@@ -3,6 +3,7 @@
 import { useTheme } from "@mobayilo/themes/react";
 import { getThemeById } from "@mobayilo/themes";
 import { SectionHeader } from "../section-header";
+import { ThemeGallery } from "./theme-gallery";
 
 // Only the swatch-able entries — skip *-rgb, *-shadow, and *-gradient, which
 // aren't standalone colors.
@@ -41,6 +42,8 @@ export function ColorTokens() {
           </div>
         ))}
       </div>
+
+      <ThemeGallery />
     </section>
   );
 }
