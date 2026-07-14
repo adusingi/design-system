@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Cloudflare Pages project serving the static export at design.mobayilo.com.
+  "name": "mobayilo-design-system",
+  "compatibility_date": "2026-07-01",
+  "pages_build_output_dir": "out"
+}

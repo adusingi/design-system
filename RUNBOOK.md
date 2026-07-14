@@ -1,5 +1,5 @@
 # RUNBOOK — @mobayilo/design-system
-*Last updated: 2026-07-11*
+*Last updated: 2026-07-14*
 
 Standalone pnpm workspace (kept separate from the parent `p/` folder — see
 `README.md`). Six packages: `themes`, `ui`, `auth-magic-link`,
@@ -179,12 +179,35 @@ pnpm -r build
 
 ---
 
-## Production Deployment
+## Production Deployment (Cloudflare Pages — design.mobayilo.com)
 
-Not deployed. This repo is an internal, unpublished package workspace plus a
-showcase site — there's no live URL yet. If/when `site` needs one, follow the
-house standard (Dokploy) per the global RUNBOOK checklist; nothing here is
-wired for that yet (no `Dockerfile`, no compose file for `site`).
+`site` is a fully static Next.js export (`output: "export"` in
+`site/next.config.ts`), deployed to Cloudflare Pages via direct upload —
+no server, no Docker. Config lives in `site/wrangler.jsonc`
+(project `mobayilo-design-system`, output dir `out/`).
+
+### One-time setup
+
+```bash
+pnpm --filter @mobayilo/design-system-site exec wrangler login
+pnpm --filter @mobayilo/design-system-site exec wrangler pages project create mobayilo-design-system --production-branch main
+```
+
+Then attach the custom domain (mobayilo.com's DNS is already on Cloudflare,
+so the CNAME is created automatically):
+
+Dashboard → Workers & Pages → `mobayilo-design-system` → **Custom domains**
+→ Add → `design.mobayilo.com`.
+
+### Deploy
+
+```bash
+pnpm deploy:site        # from the repo root: pnpm -r build, then wrangler pages deploy
+```
+
+Packages must be rebuilt before the site (`site` imports their `dist/`
+output), which is why the script runs the full recursive build first.
+Deploys from `main` are production; any other branch produces a preview URL.
 
 ---
 

@@ -14,3 +14,6 @@ packages:
 allowBuilds:
   esbuild: true
   sharp: true
+  # workerd is wrangler's local Workers runtime (needed for `wrangler dev`;
+  # `wrangler pages deploy` works without it, but approve it so installs are quiet).
+  workerd: true
