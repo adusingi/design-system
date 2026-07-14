@@ -1,0 +1,28 @@
+{
+  "name": "@mobayilo/design-system-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Homepage/showcase for the Mobayilo Design System: tokens, typography, and every @mobayilo/ui component, live.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mobayilo/themes": "workspace:*",
+    "@mobayilo/ui": "workspace:*",
+    "@mobayilo/auth-magic-link": "workspace:*",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0"
+  },
+  "license": "MIT"
+}

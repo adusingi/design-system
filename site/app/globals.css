@@ -1,0 +1,208 @@
+:root {
+  /* Point the @mobayilo/ui defaults at the self-hosted next/font variables
+     (see app/layout.tsx) instead of the bare family names. */
+  --mo-font-heading: var(--font-cormorant-garamond), Georgia, serif;
+  --mo-font-sans: var(--font-inconsolata), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --mo-font-mono: var(--font-inconsolata), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  background-image: var(--page-gradient);
+  color: var(--foreground);
+  font-family: var(--mo-font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.mo-container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 0 var(--mo-space-xl);
+}
+
+.mo-section {
+  padding: var(--mo-space-4xl) 0;
+  border-top: 1px solid var(--line);
+}
+
+.mo-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 var(--mo-space-lg);
+  border-radius: var(--mo-radius-full);
+  background: var(--accent-wash);
+  color: var(--accent);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mo-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--mo-space-lg);
+  margin-bottom: var(--mo-space-2xl);
+  flex-wrap: wrap;
+}
+
+.mo-section-index {
+  font-family: var(--mo-font-mono);
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.mo-section-title {
+  font: var(--mo-text-h2);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.mo-section-caption {
+  font: var(--mo-text-body);
+  color: var(--muted);
+}
+
+.mo-panel {
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--mo-radius-lg);
+  padding: var(--mo-space-xl);
+}
+
+.mo-panel-label {
+  font-family: var(--mo-font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+  margin: 0 0 var(--mo-space-lg);
+}
+
+.mo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--mo-space-xl);
+}
+
+@media (max-width: 760px) {
+  .mo-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mo-swatch-group + .mo-swatch-group {
+  margin-top: var(--mo-space-2xl);
+}
+
+.mo-swatch-group-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+  margin-bottom: var(--mo-space-md);
+}
+
+.mo-swatch-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--mo-space-lg);
+}
+
+.mo-swatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mo-space-sm);
+}
+
+.mo-swatch-color {
+  height: 72px;
+  border-radius: var(--mo-radius-md);
+  border: 1px solid var(--line);
+}
+
+.mo-swatch-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.mo-swatch-value {
+  font-family: var(--mo-font-mono);
+  font-size: 0.6875rem;
+  color: var(--muted-soft);
+}
+
+.mo-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--mo-space-md);
+}
+
+.mo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mo-space-md);
+}
+
+.mo-theme-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--mo-space-md);
+}
+
+.mo-theme-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--mo-space-sm);
+  border: 1px solid;
+  border-radius: var(--mo-radius-md);
+  padding: var(--mo-space-md);
+  cursor: pointer;
+  transition: border-color 140ms ease, transform 140ms ease;
+}
+
+.mo-theme-preview:hover {
+  transform: translateY(-2px);
+}
+
+.mo-theme-preview-swatches {
+  display: flex;
+  gap: 4px;
+}
+
+.mo-theme-preview-swatches span {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--mo-radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.mo-theme-preview-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.mo-theme-preview-group {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
