@@ -42,8 +42,10 @@ Requires Node ≥ 20 and pnpm 11 (`packageManager: "pnpm@11.7.0"` in
 
 ```bash
 pnpm --filter @mobayilo/design-system-site dev
-# or, to avoid a port clash with another project:
-pnpm --filter @mobayilo/design-system-site dev -- --port 4173
+# or, to avoid a port clash with another project (use `exec`, not `dev --`,
+# or pnpm forwards a literal `--` to Next and it misreads --port as the
+# project directory):
+pnpm --filter @mobayilo/design-system-site exec next dev --port 4173
 ```
 
 Open http://localhost:3000 (or whatever port you chose). Click the theme
@@ -214,4 +216,11 @@ after editing its `src/`.
 
 ### Port already in use
 Another project's dev server is probably still running. Pick a different
-port: `pnpm --filter @mobayilo/design-system-site dev -- --port <free-port>`.
+port: `pnpm --filter @mobayilo/design-system-site exec next dev --port <free-port>`.
+
+### `pnpm ... dev -- --port <n>` fails with "Invalid project directory provided, no such directory: .../--port"
+pnpm forwards the literal `--` through to Next's CLI instead of stripping
+it, so Next reads `--port` as its positional `[directory]` argument. Use
+`pnpm --filter @mobayilo/design-system-site exec next dev --port <n>`
+instead — `exec` runs the `next` binary directly, no script-arg forwarding
+involved.
