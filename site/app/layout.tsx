@@ -40,6 +40,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       data-theme={themeConfig.defaultThemeId}
       className={`${cormorantGaramond.variable} ${inconsolata.variable}`}
+      // The bootstrap script below rewrites data-theme from localStorage
+      // before hydration, so the attribute legitimately differs from the SSR
+      // value. Suppression only applies to this element, not its children.
+      suppressHydrationWarning
     >
       <head>
         {/* Applies the persisted theme before first paint to avoid a flash. */}
