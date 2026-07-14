@@ -255,6 +255,35 @@ export const themes: ThemeDefinition[] = [
         "radial-gradient(circle at top left, rgba(215, 130, 126, 0.15), transparent 32%), linear-gradient(180deg, #fff8f2 0%, #faf4ed 100%)",
     },
   },
+  {
+    // The other three light themes (catppuccin latte, solarized light, rose
+    // pine dawn) are all deliberately tinted off-whites. This is the one with
+    // an actually-white background/panel — the light counterpart to the
+    // "mobayilo" default: foreground echoes mobayilo's own #0f172a background,
+    // accent is the same green darkened for AA contrast on white.
+    id: "paper",
+    group: "light",
+    label: "paper",
+    variables: {
+      background: "#ffffff",
+      "background-rgb": "255 255 255",
+      panel: "#ffffff",
+      "panel-soft": "#f3f5f2",
+      line: "#e4e7e1",
+      "line-strong": "#15803d",
+      foreground: "#0f172a",
+      muted: "#475569",
+      "muted-soft": "#94a3b8",
+      accent: "#15803d",
+      "accent-strong": "#16a34a",
+      "accent-wash": "rgba(21, 128, 61, 0.10)",
+      "chip-background": "#ecfdf3",
+      "chip-foreground": "#15803d",
+      "card-shadow": "0 18px 50px rgba(15, 23, 42, 0.08)",
+      "page-gradient":
+        "radial-gradient(circle at top left, rgba(21, 128, 61, 0.06), transparent 40%), linear-gradient(180deg, #ffffff 0%, #fbfcfa 100%)",
+    },
+  },
 ];
 
 export const DEFAULT_THEME_ID = "mobayilo";
