@@ -8,7 +8,7 @@
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
     "clean": "pnpm -r exec rm -rf dist",
-    "deploy:site": "pnpm -r build && pnpm --filter @mobayilo/design-system-site deploy"
+    "deploy:site": "pnpm -r build && pnpm --filter @mobayilo/design-system-site run deploy"
   },
   "devDependencies": {
     "typescript": "^5.7.0"
