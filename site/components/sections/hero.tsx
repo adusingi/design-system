@@ -6,7 +6,7 @@ export function Hero() {
       <div className="mo-container">
         <p className="mo-hero-kicker">@mobayilo — themes · ui · auth-magic-link</p>
         <h1 className="mo-hero-title">
-          One system, <em>ten inks</em>.
+          One system, <em>eleven inks</em>.
         </h1>
         <p className="mo-hero-lede">
           Tokens and components shared across Academy, Bento, Network, and Umuzika. Plain CSS, zero drift. Every

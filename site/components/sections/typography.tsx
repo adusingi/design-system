@@ -9,7 +9,7 @@ const SCALE: Array<{ token: string; annotation: string; sample: string; classNam
   { token: "h1", annotation: "h1 · 2.5rem / 1.15 · 700", sample: "Consistent building blocks" },
   { token: "h2", annotation: "h2 · 2rem / 1.2 · 600", sample: "Built once, reused everywhere" },
   { token: "h3", annotation: "h3 · 1.375rem / 1.35 · 600", sample: "Same auth, same theming, every project" },
-  { token: "body-lg", annotation: "body-lg · 1.125rem / 1.55 · 400", sample: "Ten themes, one component library, zero drift." },
+  { token: "body-lg", annotation: "body-lg · 1.125rem / 1.55 · 400", sample: "Eleven themes, one component library, zero drift." },
   { token: "body", annotation: "body · 1rem / 1.6 · 400", sample: "Import the stylesheet, wrap your app in ThemeProvider, and go." },
   { token: "caption", annotation: "caption · 0.8125rem / 1.4 · 500", sample: "SHARED ACROSS ACADEMY, BENTO, NETWORK & UMUZIKA" },
 ];
