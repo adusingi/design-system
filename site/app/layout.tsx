@@ -18,6 +18,9 @@ const themeConfig = createThemeConfig({ storageKey: "mobayilo-design-system-them
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
+  // Italic is used by the header wordmark and the hero's emphasized phrase;
+  // without it the browser synthesizes a slant.
+  style: ["normal", "italic"],
   variable: "--font-cormorant-garamond",
   display: "swap",
 });

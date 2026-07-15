@@ -9,17 +9,26 @@ import { SignIn } from "./gallery/sign-in";
 
 export function ComponentsGallery() {
   return (
-    <section id="components" className="mo-container mo-section">
-      <SectionHeader index="05" title="Components" caption="Built from the tokens above" />
-      <div className="mo-gallery-grid">
-        <ButtonsAndBadges />
-        <InputsAndAvatars />
-        <CardAndDialog />
-        <FormAndSelection />
-        <Alerts />
-        <SignIn />
-        <div style={{ gridColumn: "1 / -1" }}>
-          <EntryCards />
+    <section id="components" className="mo-section" style={{ paddingBottom: 0 }}>
+      <div className="mo-container">
+        <SectionHeader
+          namespace="@mobayilo/ui"
+          title="Exhibits keep their borders."
+          caption="Components sit directly on a shifted ground — the only boxes here are the components themselves."
+        />
+      </div>
+      {/* One full-bleed panel-soft field instead of a grid of bordered panels. */}
+      <div className="mo-field">
+        <div className="mo-container mo-exhibit-grid">
+          <ButtonsAndBadges />
+          <InputsAndAvatars />
+          <CardAndDialog />
+          <FormAndSelection />
+          <Alerts />
+          <SignIn />
+          <div style={{ gridColumn: "1 / -1" }}>
+            <EntryCards />
+          </div>
         </div>
       </div>
     </section>
