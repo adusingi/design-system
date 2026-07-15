@@ -59,9 +59,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(137, 173, 255, 0.14)",
       "chip-background": "#1d2236",
       "chip-foreground": "#c9d7ff",
-      "card-shadow": "0 18px 50px rgba(3, 5, 14, 0.34)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(137, 173, 255, 0.16), transparent 32%), linear-gradient(180deg, #121523 0%, #0f111a 100%)",
+      "card-shadow": "0 12px 32px rgba(3, 5, 14, 0.34)",
+      "page-gradient": "none",
     },
   },
   {
@@ -83,9 +82,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(137, 180, 250, 0.18)",
       "chip-background": "#313244",
       "chip-foreground": "#f5c2e7",
-      "card-shadow": "0 18px 50px rgba(8, 10, 22, 0.38)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(245, 194, 231, 0.14), transparent 32%), linear-gradient(180deg, #24273a 0%, #1e1e2e 100%)",
+      "card-shadow": "0 12px 32px rgba(8, 10, 22, 0.38)",
+      "page-gradient": "none",
     },
   },
   {
@@ -107,9 +105,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(122, 162, 247, 0.16)",
       "chip-background": "#242b45",
       "chip-foreground": "#c0caf5",
-      "card-shadow": "0 18px 50px rgba(6, 8, 20, 0.36)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(122, 162, 247, 0.18), transparent 34%), linear-gradient(180deg, #1a1f37 0%, #151a2d 100%)",
+      "card-shadow": "0 12px 32px rgba(6, 8, 20, 0.36)",
+      "page-gradient": "none",
     },
   },
   {
@@ -131,9 +128,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(215, 153, 33, 0.16)",
       "chip-background": "#3c3836",
       "chip-foreground": "#fabd2f",
-      "card-shadow": "0 18px 50px rgba(0, 0, 0, 0.32)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(250, 189, 47, 0.16), transparent 30%), linear-gradient(180deg, #282828 0%, #1d2021 100%)",
+      "card-shadow": "0 12px 32px rgba(0, 0, 0, 0.32)",
+      "page-gradient": "none",
     },
   },
   {
@@ -155,9 +151,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(136, 192, 208, 0.16)",
       "chip-background": "#434c5e",
       "chip-foreground": "#e5e9f0",
-      "card-shadow": "0 18px 50px rgba(10, 12, 17, 0.32)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(143, 188, 187, 0.18), transparent 32%), linear-gradient(180deg, #3b4252 0%, #2e3440 100%)",
+      "card-shadow": "0 12px 32px rgba(10, 12, 17, 0.32)",
+      "page-gradient": "none",
     },
   },
   {
@@ -179,9 +174,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(80, 148, 117, 0.16)",
       "chip-background": "#1f3028",
       "chip-foreground": "#d7c995",
-      "card-shadow": "0 18px 50px rgba(0, 0, 0, 0.36)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(80, 148, 117, 0.2), transparent 32%), linear-gradient(180deg, #172420 0%, #111c18 100%)",
+      "card-shadow": "0 12px 32px rgba(0, 0, 0, 0.36)",
+      "page-gradient": "none",
     },
   },
   {
@@ -203,9 +197,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(114, 135, 253, 0.14)",
       "chip-background": "#dce0e8",
       "chip-foreground": "#8839ef",
-      "card-shadow": "0 18px 50px rgba(76, 79, 105, 0.10)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(114, 135, 253, 0.14), transparent 32%), linear-gradient(180deg, #f7f7fb 0%, #eff1f5 100%)",
+      "card-shadow": "0 12px 32px rgba(76, 79, 105, 0.10)",
+      "page-gradient": "none",
     },
   },
   {
@@ -227,9 +220,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(38, 139, 210, 0.12)",
       "chip-background": "#eee8d5",
       "chip-foreground": "#268bd2",
-      "card-shadow": "0 18px 50px rgba(88, 110, 117, 0.08)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(42, 161, 152, 0.16), transparent 32%), linear-gradient(180deg, #fefbf1 0%, #fdf6e3 100%)",
+      "card-shadow": "0 12px 32px rgba(88, 110, 117, 0.08)",
+      "page-gradient": "none",
     },
   },
   {
@@ -251,9 +243,8 @@ export const themes: ThemeDefinition[] = [
       "accent-wash": "rgba(144, 122, 169, 0.13)",
       "chip-background": "#f2e9e1",
       "chip-foreground": "#907aa9",
-      "card-shadow": "0 18px 50px rgba(87, 82, 121, 0.08)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(215, 130, 126, 0.15), transparent 32%), linear-gradient(180deg, #fff8f2 0%, #faf4ed 100%)",
+      "card-shadow": "0 12px 32px rgba(87, 82, 121, 0.08)",
+      "page-gradient": "none",
     },
   },
   {
