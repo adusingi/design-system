@@ -202,12 +202,28 @@ Dashboard → Workers & Pages → `mobayilo-design-system` → **Custom domains*
 ### Deploy
 
 ```bash
-pnpm deploy:site        # from the repo root: pnpm -r build, then wrangler pages deploy
+pnpm deploy:site        # production  → design.mobayilo.com
+pnpm deploy:site:dev    # dev site    → development.mobayilo-design-system.pages.dev
 ```
 
-Packages must be rebuilt before the site (`site` imports their `dist/`
-output), which is why the script runs the full recursive build first.
-Deploys from `main` are production; any other branch produces a preview URL.
+Both run `pnpm -r build` first (packages must be rebuilt before the site —
+`site` imports their `dist/` output), then `wrangler pages deploy` with the
+Pages branch **pinned** (`--branch=main` / `--branch=development`), so the
+deploy target no longer depends on which git branch is checked out. Only the
+`main` Pages branch is production; `development` is a stable preview alias.
+
+Deploy the dev site to preview `development` before fast-forwarding `main`.
+
+### Optional: custom domain for the dev site
+
+The dev alias can be given a custom domain with a single DNS record (needs
+dashboard access — the wrangler OAuth token has no DNS write scope):
+
+DNS → mobayilo.com → Add record: **CNAME** `design-dev` →
+`development.mobayilo-design-system.pages.dev` (proxied).
+
+This serves the dev site at design-dev.mobayilo.com. Note the dev site is
+public either way; put Cloudflare Access in front of it if that ever matters.
 
 ---
 

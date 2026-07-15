@@ -8,7 +8,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "wrangler pages deploy",
+    "deploy": "wrangler pages deploy --branch=main",
+    "deploy:dev": "wrangler pages deploy --branch=development",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
