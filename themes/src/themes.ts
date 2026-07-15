@@ -16,27 +16,28 @@ export type ThemeDefinition = {
 
 export const themes: ThemeDefinition[] = [
   {
+    // v2 "sharp": flat ground (no page gradient), deeper background, brighter
+    // ink, and crisper hairlines — the old radial green tint read as haze.
     id: "mobayilo",
     group: "dark",
     label: "mobayilo",
     variables: {
-      background: "#0F172A",
-      "background-rgb": "15 23 42",
-      panel: "#1E293B",
-      "panel-soft": "#162032",
-      line: "#253346",
+      background: "#0B1220",
+      "background-rgb": "11 18 32",
+      panel: "#1A2438",
+      "panel-soft": "#131C2E",
+      line: "#2C3B55",
       "line-strong": "#22C55E",
-      foreground: "#F1F5F9",
+      foreground: "#F8FAFC",
       muted: "#94A3B8",
       "muted-soft": "#64748B",
       accent: "#22C55E",
       "accent-strong": "#4ADE80",
-      "accent-wash": "rgba(34, 197, 94, 0.14)",
-      "chip-background": "#1E293B",
+      "accent-wash": "rgba(34, 197, 94, 0.16)",
+      "chip-background": "#1A2438",
       "chip-foreground": "#4ADE80",
-      "card-shadow": "0 18px 50px rgba(0, 0, 0, 0.40)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(34, 197, 94, 0.07), transparent 40%), linear-gradient(180deg, #111827 0%, #0F172A 100%)",
+      "card-shadow": "0 12px 32px rgba(0, 0, 0, 0.45)",
+      "page-gradient": "none",
     },
   },
   {
@@ -259,8 +260,9 @@ export const themes: ThemeDefinition[] = [
     // The other three light themes (catppuccin latte, solarized light, rose
     // pine dawn) are all deliberately tinted off-whites. This is the one with
     // an actually-white background/panel — the light counterpart to the
-    // "mobayilo" default: foreground echoes mobayilo's own #0f172a background,
-    // accent is the same green darkened for AA contrast on white.
+    // "mobayilo" default. v2 "sharp": flat white (no page gradient), neutrals
+    // shifted from the old green-tinted greys to crisp slate, foreground
+    // echoes sharp mobayilo's #0B1220 ground; accent stays the AA-safe green.
     id: "paper",
     group: "light",
     label: "paper",
@@ -268,20 +270,19 @@ export const themes: ThemeDefinition[] = [
       background: "#ffffff",
       "background-rgb": "255 255 255",
       panel: "#ffffff",
-      "panel-soft": "#f3f5f2",
-      line: "#e4e7e1",
+      "panel-soft": "#EEF2F7",
+      line: "#DCE3EC",
       "line-strong": "#15803d",
-      foreground: "#0f172a",
+      foreground: "#0B1220",
       muted: "#475569",
       "muted-soft": "#94a3b8",
       accent: "#15803d",
       "accent-strong": "#16a34a",
-      "accent-wash": "rgba(21, 128, 61, 0.10)",
+      "accent-wash": "rgba(21, 128, 61, 0.12)",
       "chip-background": "#ecfdf3",
       "chip-foreground": "#15803d",
-      "card-shadow": "0 18px 50px rgba(15, 23, 42, 0.08)",
-      "page-gradient":
-        "radial-gradient(circle at top left, rgba(21, 128, 61, 0.06), transparent 40%), linear-gradient(180deg, #ffffff 0%, #fbfcfa 100%)",
+      "card-shadow": "0 12px 32px rgba(11, 18, 32, 0.10)",
+      "page-gradient": "none",
     },
   },
 ];
