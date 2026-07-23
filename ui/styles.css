@@ -256,6 +256,17 @@
 .mo-select:focus {
   border-color: var(--line-strong);
 }
+/* Chrome/Safari paint autofill's own background as a plain rectangle behind
+   the field, ignoring `background` — the box-shadow inset trick is the only
+   override; -webkit-text-fill-color re-applies our text color, which
+   autofill also overrides. */
+.mo-input:-webkit-autofill,
+.mo-input:-webkit-autofill:hover,
+.mo-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--panel) inset;
+  -webkit-text-fill-color: var(--foreground);
+  transition: background-color 0s 600000s, color 0s 600000s;
+}
 .mo-input::placeholder,
 .mo-textarea::placeholder {
   color: var(--muted-soft);

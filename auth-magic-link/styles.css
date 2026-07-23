@@ -65,6 +65,18 @@
   color: var(--foreground);
   outline: none;
 }
+/* Chrome/Safari paint autofill's own background as a plain rectangle behind
+   the field, ignoring `background` — against this pill's rounded corners it
+   peeks out at the top/bottom, reading as a second, overlapping input. The
+   box-shadow inset trick is the only way to override that fill; -webkit-
+   text-fill-color re-applies our text color, which autofill also over-rides. */
+.ml-auth-input:-webkit-autofill,
+.ml-auth-input:-webkit-autofill:hover,
+.ml-auth-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--panel) inset;
+  -webkit-text-fill-color: var(--foreground);
+  transition: background-color 0s 600000s, color 0s 600000s;
+}
 .ml-auth-input:focus {
   border-color: var(--line-strong);
 }
