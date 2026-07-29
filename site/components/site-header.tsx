@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 import { ThemeSwitcher } from "@mobayilo/themes/react";
 
+// Homepage-anchored ("/#tokens", not "#tokens") so nav still resolves
+// correctly from routes other than "/" (e.g. not-found.tsx, error.tsx).
 const NAV_LINKS = [
-  { href: "#tokens", label: "Color" },
-  { href: "#typography", label: "Type" },
-  { href: "#geometry", label: "Space" },
-  { href: "#components", label: "Components" },
+  { href: "/#tokens", label: "Color" },
+  { href: "/#typography", label: "Type" },
+  { href: "/#geometry", label: "Space" },
+  { href: "/#components", label: "Components" },
 ];
 
 export function SiteHeader() {

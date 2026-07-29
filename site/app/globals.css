@@ -352,6 +352,17 @@ a {
   gap: var(--mo-space-md);
 }
 
+/* ---------------- error / not-found ---------------- */
+
+/* 64px offsets the sticky header (site-header.tsx) so the drawdown centers
+   in the remaining viewport instead of under it. */
+.mo-error-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  padding: 64px 0 96px;
+}
+
 /* ---------------- footer ---------------- */
 
 .mo-footer {
