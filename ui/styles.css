@@ -56,6 +56,9 @@
   border-radius: var(--mo-radius-full);
   font-family: var(--mo-font-sans);
   font-weight: 600;
+  /* .mo-btn is also used on <a> (a link that looks like a button); without
+     this the browser underlines its label. */
+  text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
   transition: background 140ms ease, border-color 140ms ease, opacity 140ms ease;
