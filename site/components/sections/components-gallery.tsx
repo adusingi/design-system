@@ -18,7 +18,7 @@ export function ComponentsGallery() {
         />
       </div>
       {/* One full-bleed panel-soft field instead of a grid of bordered panels. */}
-      <div className="mo-field">
+      <div className="mo-exhibit-field">
         <div className="mo-container mo-exhibit-grid">
           <ButtonsAndBadges />
           <InputsAndAvatars />

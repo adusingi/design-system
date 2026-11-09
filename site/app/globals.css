@@ -307,7 +307,9 @@ a {
 
 /* ---------------- components field ---------------- */
 
-.mo-field {
+/* Not .mo-field: @mobayilo/ui owns that class (FormField), and reusing it gave
+   every form field this band's margin and padding. */
+.mo-exhibit-field {
   margin-top: var(--mo-space-3xl);
   background: var(--panel-soft);
   padding: 88px 0 96px;
