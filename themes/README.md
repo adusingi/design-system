@@ -4,7 +4,7 @@ Shared theme tokens (CSS variables) plus a React `ThemeProvider`, `ThemeSwitcher
 and `useTheme` — the same theming used across curator-board, inkoranyamuga, and
 mytrip, extracted so each project configures it instead of copying it.
 
-Ships 10 themes (7 dark, 3 light) with `mobayilo` as the default.
+Ships 12 themes (7 dark, 5 light) with `mobayilo` as the default.
 
 ## Install
 

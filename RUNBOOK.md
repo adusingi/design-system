@@ -49,7 +49,7 @@ pnpm --filter @mobayilo/design-system-site exec next dev --port 4173
 ```
 
 Open http://localhost:3000 (or whatever port you chose). Click the theme
-trigger top-right (or press `/`) to switch between all 10 themes; scroll to
+trigger top-right (or press `/`) to switch between all 12 themes; scroll to
 **Components** for the full gallery, including the magic-link + Google
 `SignInForm` demo (mocked — no real email is sent, no secrets required).
 

@@ -276,6 +276,34 @@ export const themes: ThemeDefinition[] = [
       "page-gradient": "none",
     },
   },
+  {
+    // Black ink on white, with the warm paper of the Focus Zen app icon
+    // (#f4f0ea) as the recessed surface; ink #171717 is the icon's figure. The
+    // one theme with no colour accent: accent is the ink itself, so primary and
+    // accent buttons are both ink pills. Warm brown shadow and hairline instead
+    // of the slate ones, to match the paper.
+    id: "focus-zen",
+    group: "light",
+    label: "focus zen",
+    variables: {
+      background: "#ffffff",
+      "background-rgb": "255 255 255",
+      panel: "#ffffff",
+      "panel-soft": "#f4f0ea",
+      line: "#e6e0d6",
+      "line-strong": "#171717",
+      foreground: "#171717",
+      muted: "#57534e",
+      "muted-soft": "#8a847c",
+      accent: "#171717",
+      "accent-strong": "#000000",
+      "accent-wash": "rgba(23, 23, 23, 0.08)",
+      "chip-background": "#f4f0ea",
+      "chip-foreground": "#171717",
+      "card-shadow": "0 12px 32px rgba(60, 45, 25, 0.12)",
+      "page-gradient": "none",
+    },
+  },
 ];
 
 export const DEFAULT_THEME_ID = "mobayilo";

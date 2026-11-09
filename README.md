@@ -10,7 +10,7 @@ named building blocks — better for humans **and** for AI-assisted development.
 
 | Package | What it is |
 |---|---|
-| [`@mobayilo/themes`](./themes) | Theme tokens (CSS variables) + `ThemeProvider`/`ThemeSwitcher`/`useTheme`. 10 themes, `mobayilo` default. |
+| [`@mobayilo/themes`](./themes) | Theme tokens (CSS variables) + `ThemeProvider`/`ThemeSwitcher`/`useTheme`. 12 themes, `mobayilo` default. |
 | [`@mobayilo/ui`](./ui) | Button, Card, Dialog, Badge, Avatar, Alert, Tabs, and form controls (Input/Textarea/Select/Checkbox/Radio/Switch/Slider/Progress). Plain CSS against the theme tokens above. |
 | [`@mobayilo/auth-magic-link`](./auth-magic-link) | Passwordless auth for Next.js: Better Auth magic link (+ optional Google), ZeptoMail email, session helpers, `SignInForm`. |
 | [`@mobayilo/telegram-connect`](./telegram-connect) | Telegram account/group linking: webhook handler, hashed TTL tokens, message parsing, pluggable storage (Drizzle/memory). |
