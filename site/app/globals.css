@@ -365,24 +365,6 @@ a {
   padding: 64px 0 96px;
 }
 
-/* ---------------- footer ---------------- */
-
-.mo-footer {
-  padding-top: 128px;
-}
-
-.mo-footer .mo-container {
-  padding-bottom: var(--mo-space-3xl);
-  color: var(--muted-soft);
-  font-size: 0.8125rem;
-}
-
-.mo-footer-echo {
-  display: flex;
-  height: 8px;
-}
-
-.mo-footer-echo span {
-  flex: 1;
-  transition: background 240ms ease;
-}
+.mo-footer-showcase__samples { display: grid; gap: 2rem; }
+.mo-footer-showcase__sample { min-width: 0; border-block: 1px solid var(--line); }
+.mo-footer-showcase__label { margin: 0; padding: 1rem max(1.25rem, calc((100vw - 80rem) / 2)); color: var(--muted-soft); font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }

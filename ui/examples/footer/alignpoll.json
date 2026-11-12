@@ -1,0 +1,10 @@
+{
+  "variant": "compact",
+  "brand": { "name": "AlignPoll", "href": "/", "logo": { "src": "/alignpoll.svg", "alt": "" }, "description": "Simple, thoughtful polls for teams and communities." },
+  "copyright": "© 2026 AlignPoll · Mobayilo",
+  "columns": [
+    { "title": "Product", "links": [{ "label": "Features", "href": "/features" }, { "label": "Pricing", "href": "/pricing" }] },
+    { "title": "Support", "links": [{ "label": "Help center", "href": "/help" }, { "label": "Contact", "href": "mailto:hello@alignpoll.com" }] },
+    { "title": "Legal", "links": [{ "label": "Privacy", "href": "/privacy" }, { "label": "Terms", "href": "/terms" }] }
+  ]
+}

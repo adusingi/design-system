@@ -1,0 +1,10 @@
+{
+  "variant": "compact",
+  "brand": { "name": "Doko Maps", "href": "/", "logo": { "src": "/doko.svg", "alt": "" }, "description": "Find the places, routes, and local knowledge that make every journey easier." },
+  "copyright": "© 2026 Doko Maps · Mobayilo",
+  "columns": [
+    { "title": "Explore", "links": [{ "label": "Map", "href": "/map" }, { "label": "Places", "href": "/places" }] },
+    { "title": "Support", "links": [{ "label": "Help", "href": "/help" }, { "label": "Contact", "href": "mailto:hello@doko.maps" }] },
+    { "title": "Legal", "links": [{ "label": "Privacy", "href": "/privacy" }, { "label": "Terms", "href": "/terms" }] }
+  ]
+}
