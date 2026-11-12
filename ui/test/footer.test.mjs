@@ -50,12 +50,12 @@ test("renderer emits external-link attributes and translated data-t values", () 
 
 test("optional brand tag renders with translation, escapes text, and is omitted when absent", () => {
   const plain = renderFooterHtml({ ...base, brand: { ...base.brand, tag: "Beta" } });
-  assert.match(plain, /<span class="mo-footer__tag"><span class="mo-footer__tag-mark" aria-hidden="true"><\/span>Beta<\/span>/);
+  assert.match(plain, /<span class="mo-footer__tag"><span class="mo-footer__tag-mark" aria-hidden="true"><\/span><span class="mo-footer__tag-text">Beta<\/span><\/span>/);
   assert.doesNotMatch(plain, /data-t="footer\.tag"/);
   assert.ok(plain.indexOf("mo-footer__tag") < plain.indexOf("mo-footer__copyright"));
 
   const translated = renderFooterHtml({ ...base, brand: { ...base.brand, tag: { text: "<Beta & preview>", i18n: "footer.tag" } } });
-  assert.match(translated, /<span class="mo-footer__tag" data-t="footer\.tag"><span class="mo-footer__tag-mark" aria-hidden="true"><\/span>&lt;Beta &amp; preview&gt;<\/span>/);
+  assert.match(translated, /<span class="mo-footer__tag"><span class="mo-footer__tag-mark" aria-hidden="true"><\/span><span class="mo-footer__tag-text" data-t="footer\.tag">&lt;Beta &amp; preview&gt;<\/span><\/span>/);
   assert.doesNotMatch(translated, /<Beta & preview>/);
   assert.doesNotMatch(renderFooterHtml(base), /mo-footer__tag/);
 });
@@ -96,4 +96,20 @@ test("CLI inject/check handle missing markers and current or stale markup", asyn
 test("React server markup equals renderFooterHtml", () => {
   const config = { ...base, brand: { ...base.brand, tag: { text: "Beta", i18n: "footer.tag" } }, variant: "full", social: [{ kind: "instagram", href: "https://instagram.com/sample", label: "Instagram" }], bottom: { left: "Made with care" } };
   assert.equal(renderToStaticMarkup(createElement(SiteFooter, { config })), renderFooterHtml(config));
+});
+
+test("a product's i18n can translate every data-t element without removing a mark or an icon", () => {
+  const config = {
+    ...base,
+    variant: "full",
+    brand: { ...base.brand, tag: { text: "Beta", i18n: "footer.tag" } },
+    social: [{ kind: "linkedin", href: "https://example.com", label: { text: "LinkedIn", i18n: "footer.linkedin" } }],
+  };
+  const html = renderFooterHtml(config);
+  // Every element with data-t holds text only: replacing its text (what a product's i18n does) keeps all markup.
+  for (const match of html.matchAll(/<(\w+)[^>]*\sdata-t="[^"]+"[^>]*>([\s\S]*?)<\/\1>/g)) {
+    assert.doesNotMatch(match[2], /</, `a data-t element has children: ${match[0].slice(0, 80)}`);
+  }
+  assert.match(html, /class="mo-footer__tag-mark"/);
+  assert.match(html, /<a class="mo-footer__social-link"[^>]*data-t-label="footer\.linkedin"[^>]*><svg/);
 });

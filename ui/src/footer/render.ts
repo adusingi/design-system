@@ -3,6 +3,9 @@ import { assertFooterConfig, type FooterConfig, type FooterText } from "./config
 const escape = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const valueText = (value: FooterText): string => typeof value === "string" ? value : value.text;
 const i18n = (value: FooterText) => typeof value === "string" ? "" : ` data-t="${escape(value.i18n)}"`;
+// For an element that has children (an icon, a mark), translate only its accessible name: a
+// product's i18n replaces the text of a data-t element, which would remove the children.
+const i18nLabel = (value: FooterText) => typeof value === "string" ? "" : ` data-t-label="${escape(value.i18n)}"`;
 const text = (value: FooterText) => `${escape(valueText(value))}`;
 
 const icons: Record<string, string> = {
@@ -20,8 +23,8 @@ export function renderFooterInnerHtml(config: FooterConfig): string {
   const logo = "svg" in config.brand.logo
     ? config.brand.logo.svg
     : `<img class="mo-footer__logo" src="${escape(config.brand.logo.src)}" alt="${text(config.brand.logo.alt)}"${i18n(config.brand.logo.alt)} />`;
-  const tag = config.brand.tag === undefined ? "" : `<span class="mo-footer__tag"${i18n(config.brand.tag)}><span class="mo-footer__tag-mark" aria-hidden="true"></span>${text(config.brand.tag)}</span>`;
-  const brand = `<div class="mo-footer__brand"><a class="mo-footer__brand-link" href="${escape(config.brand.href)}">${logo}<span class="mo-footer__name"${i18n(config.brand.name)}>${text(config.brand.name)}</span></a><p class="mo-footer__description"${i18n(config.brand.description)}>${text(config.brand.description)}</p>${tag}${config.variant === "full" && config.social?.length ? `<div class="mo-footer__social">${config.social.map((item) => `<a class="mo-footer__social-link" href="${escape(item.href)}" aria-label="${text(item.label)}"${i18n(item.label)} target="_blank" rel="noopener noreferrer">${socialIcon(item.kind)}</a>`).join("")}</div>` : ""}${renderText(config.copyright, "mo-footer__copyright")}</div>`;
+  const tag = config.brand.tag === undefined ? "" : `<span class="mo-footer__tag"><span class="mo-footer__tag-mark" aria-hidden="true"></span><span class="mo-footer__tag-text"${i18n(config.brand.tag)}>${text(config.brand.tag)}</span></span>`;
+  const brand = `<div class="mo-footer__brand"><a class="mo-footer__brand-link" href="${escape(config.brand.href)}">${logo}<span class="mo-footer__name"${i18n(config.brand.name)}>${text(config.brand.name)}</span></a><p class="mo-footer__description"${i18n(config.brand.description)}>${text(config.brand.description)}</p>${tag}${config.variant === "full" && config.social?.length ? `<div class="mo-footer__social">${config.social.map((item) => `<a class="mo-footer__social-link" href="${escape(item.href)}" aria-label="${text(item.label)}"${i18nLabel(item.label)} target="_blank" rel="noopener noreferrer">${socialIcon(item.kind)}</a>`).join("")}</div>` : ""}${renderText(config.copyright, "mo-footer__copyright")}</div>`;
   const count = Math.min(config.columns.length, 4);
   const columns = `<div class="mo-footer__columns mo-footer__columns--${count}">${config.columns.map((column) => `<nav class="mo-footer__column" aria-label="${text(column.title)}"><p class="mo-footer__title"${i18n(column.title)}>${text(column.title)}</p><ul>${column.links.map((link) => `<li><a href="${escape(link.href)}"${i18n(link.label)}${link.external ? ' target="_blank" rel="noopener noreferrer"' : ""}>${text(link.label)}</a></li>`).join("")}</ul></nav>`).join("")}</div>`;
   const bottom = config.variant === "full" && (config.bottom?.left || config.bottom?.right)
