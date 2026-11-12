@@ -67,7 +67,8 @@ import from a Server Component tree.
 Every product's footer comes from this component; a product only writes its
 config file. The contract is described by [`footer.schema.json`](./footer.schema.json)
 and the `FooterConfig` TypeScript type. Set `variant` to `compact` (the default)
-or `full`. A config contains `brand` (`name`, `href`, `logo`, `description`),
+or `full`. A config contains `brand` (`name`, `href`, `logo`, `description`,
+and optional `tag`),
 `copyright`, and `columns` of titled link lists. `full` also renders optional
 `social` links and a `bottom` bar. Logo is either `{ "src", "alt" }` or
 `{ "svg" }`; inline SVG is inserted as trusted markup and must come from a

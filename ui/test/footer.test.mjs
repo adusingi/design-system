@@ -26,6 +26,7 @@ test("validator accepts a valid config and reports clear errors", () => {
   assert.ok(errors.some((error) => error.includes("brand.name")));
   assert.ok(errors.some((error) => error.includes("copyright")));
   assert.ok(errors.some((error) => error.includes("columns[0].links[0].label")));
+  assert.ok(validateFooterConfig({ ...base, brand: { ...base.brand, tag: 7 } }).some((error) => error.includes("brand.tag")));
   assert.throws(() => assertFooterConfig(null), /config must be an object/);
 });
 
@@ -45,6 +46,18 @@ test("renderer emits external-link attributes and translated data-t values", () 
   assert.match(html, /data-t="footer\.links"/);
   assert.match(html, /data-t="footer\.docs"/);
   assert.match(html, /target="_blank" rel="noopener noreferrer"/);
+});
+
+test("optional brand tag renders with translation, escapes text, and is omitted when absent", () => {
+  const plain = renderFooterHtml({ ...base, brand: { ...base.brand, tag: "Beta" } });
+  assert.match(plain, /<span class="mo-footer__tag"><span class="mo-footer__tag-mark" aria-hidden="true"><\/span>Beta<\/span>/);
+  assert.doesNotMatch(plain, /data-t="footer\.tag"/);
+  assert.ok(plain.indexOf("mo-footer__tag") < plain.indexOf("mo-footer__copyright"));
+
+  const translated = renderFooterHtml({ ...base, brand: { ...base.brand, tag: { text: "<Beta & preview>", i18n: "footer.tag" } } });
+  assert.match(translated, /<span class="mo-footer__tag" data-t="footer\.tag"><span class="mo-footer__tag-mark" aria-hidden="true"><\/span>&lt;Beta &amp; preview&gt;<\/span>/);
+  assert.doesNotMatch(translated, /<Beta & preview>/);
+  assert.doesNotMatch(renderFooterHtml(base), /mo-footer__tag/);
 });
 
 test("compact and full variants render the expected optional pieces", () => {
@@ -81,6 +94,6 @@ test("CLI inject/check handle missing markers and current or stale markup", asyn
 });
 
 test("React server markup equals renderFooterHtml", () => {
-  const config = { ...base, variant: "full", social: [{ kind: "instagram", href: "https://instagram.com/sample", label: "Instagram" }], bottom: { left: "Made with care" } };
+  const config = { ...base, brand: { ...base.brand, tag: { text: "Beta", i18n: "footer.tag" } }, variant: "full", social: [{ kind: "instagram", href: "https://instagram.com/sample", label: "Instagram" }], bottom: { left: "Made with care" } };
   assert.equal(renderToStaticMarkup(createElement(SiteFooter, { config })), renderFooterHtml(config));
 });

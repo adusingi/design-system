@@ -12,6 +12,8 @@ timestamp: 2026-11-12T13:26:29+09:00
 - [x] **2026-11-12** — Add one configurable, responsive site footer for every
       Mobayilo product: shared React/HTML renderer, schema and validator,
       static-site CLI, compact/full variants, showcase samples, and adoption docs.
+- [x] **2026-11-12** — Add an optional localized brand tag to the shared footer,
+      styled as an outlined label with a configurable accent mark.
 
 - [x] **2026-07-15** — Sharpen all 11 themes: flat grounds (page gradients removed),
       tighter card shadows; mobayilo/paper also got crisper neutrals

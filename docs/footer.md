@@ -17,6 +17,12 @@ render`, `mo-footer inject`, and `mo-footer check`; the latter keeps product CI
 aligned with the canonical markup. Products without a bundler copy the
 standalone stylesheet with `mo-footer css`.
 
+The optional `brand.tag` is a string or `{ "text", "i18n" }`; it renders as a
+small outlined label under the description and before the copyright. CSS
+uppercases its text while preserving the configured value. Set
+`--mo-footer-accent` (default `#2f4fd8`) to change its square mark, or
+`--mo-footer-tag-font` to change its monospace text.
+
 The config owns product copy and destinations. Footer structure, responsive
 layout, accessibility attributes, link handling, and styling come from the
 shared implementation. Inline SVG logos are trusted config content and must be
