@@ -13,7 +13,10 @@ packages:
 # so every detected build must get an explicit true/false here.
 allowBuilds:
   esbuild: true
-  sharp: true
+  # sharp's script only verifies the prebuilt @img/sharp-* binary, or compiles
+  # from source (and fails) when it finds a system libvips such as Homebrew vips.
+  # The prebuilt binary works without it.
+  sharp: false
   # workerd is wrangler's local Workers runtime (needed for `wrangler dev`;
   # `wrangler pages deploy` works without it, but approve it so installs are quiet).
   workerd: true
