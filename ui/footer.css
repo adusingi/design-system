@@ -22,6 +22,8 @@
 .mo-footer__brand-link > svg { display: block; width: 2rem; height: 2rem; flex: none; }
 .mo-footer__name { font-size: 1.25rem; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
 .mo-footer__description { max-width: 22rem; margin: 1rem 0 0; color: var(--mo-footer-ink-soft, var(--muted, #6b7280)); font-size: .875rem; line-height: 1.55; overflow-wrap: anywhere; }
+.mo-footer__tag { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem; padding: .25rem .5rem; border: 1px solid var(--mo-footer-border, var(--line, #e5e7eb)); color: var(--mo-footer-ink-soft, var(--muted, #6b7280)); font-family: var(--mo-footer-tag-font, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: .6875rem; letter-spacing: .15em; line-height: 1.4; text-transform: uppercase; }
+.mo-footer__tag-mark { width: .5rem; height: .5rem; flex: none; background: var(--mo-footer-accent, #2f4fd8); }
 .mo-footer__copyright { margin: 1.25rem 0 0; color: var(--mo-footer-ink-soft, var(--muted, #6b7280)); font-size: .8125rem; line-height: 1.5; overflow-wrap: anywhere; }
 .mo-footer__columns { display: grid; grid-template-columns: repeat(var(--mo-footer-column-count, 1), minmax(0, 1fr)); gap: 1.5rem; }
 .mo-footer__columns--1 { --mo-footer-column-count: 1; }

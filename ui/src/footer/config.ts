@@ -3,7 +3,7 @@ export type FooterText = string | { text: string; i18n: string };
 export type FooterLogo = { svg: string } | { src: string; alt: FooterText };
 export type FooterConfig = {
   variant?: "compact" | "full";
-  brand: { name: FooterText; href: string; logo: FooterLogo; description: FooterText };
+  brand: { name: FooterText; href: string; logo: FooterLogo; description: FooterText; tag?: FooterText };
   copyright: FooterText;
   columns: Array<{ title: FooterText; links: Array<{ label: FooterText; href: string; external?: boolean }> }>;
   social?: Array<{ kind: "facebook" | "linkedin" | "x" | "github" | "instagram"; href: string; label: FooterText }>;
@@ -25,6 +25,7 @@ export function validateFooterConfig(value: unknown): string[] {
     text(value.brand.name, "brand.name");
     if (typeof value.brand.href !== "string" || !value.brand.href) errors.push("brand.href must be a non-empty string");
     text(value.brand.description, "brand.description");
+    if (value.brand.tag !== undefined) text(value.brand.tag, "brand.tag");
     if (!obj(value.brand.logo)) errors.push("brand.logo must be an object");
     else if (typeof value.brand.logo.svg === "string") { /* trusted inline SVG */ }
     else {
