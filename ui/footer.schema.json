@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mobayilo Site Footer Config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["brand", "copyright", "columns"],
+  "properties": {
+    "variant": { "enum": ["compact", "full"] },
+    "brand": {
+      "type": "object", "additionalProperties": false, "required": ["name", "href", "logo", "description"],
+      "properties": {
+        "name": { "$ref": "#/$defs/text" }, "href": { "type": "string", "minLength": 1 },
+        "description": { "$ref": "#/$defs/text" },
+        "logo": { "oneOf": [
+          { "type": "object", "additionalProperties": false, "required": ["svg"], "properties": { "svg": { "type": "string" } } },
+          { "type": "object", "additionalProperties": false, "required": ["src", "alt"], "properties": { "src": { "type": "string", "minLength": 1 }, "alt": { "$ref": "#/$defs/text" } } }
+        ] }
+      }
+    },
+    "copyright": { "$ref": "#/$defs/text" },
+    "columns": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["title", "links"], "properties": {
+      "title": { "$ref": "#/$defs/text" }, "links": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["label", "href"], "properties": { "label": { "$ref": "#/$defs/text" }, "href": { "type": "string", "minLength": 1 }, "external": { "type": "boolean" } } } }
+    } } },
+    "social": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["kind", "href", "label"], "properties": { "kind": { "enum": ["facebook", "linkedin", "x", "github", "instagram"] }, "href": { "type": "string", "minLength": 1 }, "label": { "$ref": "#/$defs/text" } } } },
+    "bottom": { "type": "object", "additionalProperties": false, "properties": { "left": { "$ref": "#/$defs/text" }, "right": { "$ref": "#/$defs/text" } } }
+  },
+  "$defs": { "text": { "oneOf": [ { "type": "string" }, { "type": "object", "additionalProperties": false, "required": ["text", "i18n"], "properties": { "text": { "type": "string" }, "i18n": { "type": "string", "minLength": 1 } } } ] } }
+}

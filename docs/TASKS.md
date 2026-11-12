@@ -2,12 +2,16 @@
 type: Tasks
 title: Design system tasks
 description: Running task log for the mobayilo design-system repo.
-timestamp: 2026-11-09T21:05:00+09:00
+timestamp: 2026-11-12T13:26:29+09:00
 ---
 
 # Tasks
 
 ## Completed
+
+- [x] **2026-11-12** — Add one configurable, responsive site footer for every
+      Mobayilo product: shared React/HTML renderer, schema and validator,
+      static-site CLI, compact/full variants, showcase samples, and adoption docs.
 
 - [x] **2026-07-15** — Sharpen all 11 themes: flat grounds (page gradients removed),
       tighter card shadows; mobayilo/paper also got crisper neutrals

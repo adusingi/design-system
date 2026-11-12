@@ -23,6 +23,10 @@ export { Slider, type SliderProps } from "./slider.js";
 
 export { Progress, type ProgressProps } from "./progress.js";
 
+export { SiteFooter } from "./footer/site-footer.js";
+export { renderFooterHtml } from "./footer/render.js";
+export { assertFooterConfig, validateFooterConfig, type FooterConfig, type FooterText, type FooterLogo } from "./footer/config.js";
+
 export { FormField, type FormFieldProps } from "./form-field.js";
 
 export { Alert, type AlertProps, type AlertVariant } from "./alert.js";

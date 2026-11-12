@@ -1,0 +1,10 @@
+{
+  "variant": "compact",
+  "brand": { "name": "Classroom", "href": "/", "logo": { "src": "/logo.svg", "alt": "" }, "description": "A private tutor for any topic. Classroom is an independent product under Mobayilo." },
+  "copyright": "© 2026 Classroom · Mobayilo",
+  "columns": [
+    { "title": "Learn", "links": [{ "label": "Start a course", "href": "/" }, { "label": "Your progress", "href": "/progress" }] },
+    { "title": "Support", "links": [{ "label": "Contact", "href": "mailto:contact@mobayilo.com" }, { "label": "Safety", "href": "/safety" }] },
+    { "title": "Legal", "links": [{ "label": "Privacy", "href": "/privacy" }, { "label": "Terms", "href": "/terms" }] }
+  ]
+}

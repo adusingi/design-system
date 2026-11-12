@@ -1,0 +1,17 @@
+{
+  "variant": "full",
+  "brand": { "name": "Mobayilo", "href": "/", "logo": { "src": "/logo.svg", "alt": "Mobayilo" }, "description": "A thoughtful home for products that make everyday life work better." },
+  "copyright": "© 2026 Mobayilo",
+  "columns": [
+    { "title": "Company", "links": [{ "label": "About", "href": "/about" }, { "label": "Careers", "href": "/careers" }] },
+    { "title": "Support", "links": [{ "label": "Contact", "href": "mailto:hello@mobayilo.com" }, { "label": "Help center", "href": "/help" }] },
+    { "title": "Legal", "links": [{ "label": "Privacy", "href": "/privacy" }, { "label": "Terms", "href": "/terms" }] }
+  ],
+  "social": [
+    { "kind": "facebook", "href": "https://facebook.com/mobayilo", "label": "Facebook" },
+    { "kind": "linkedin", "href": "https://linkedin.com/company/mobayilo", "label": "LinkedIn" },
+    { "kind": "x", "href": "https://x.com/mobayilo", "label": "X" },
+    { "kind": "instagram", "href": "https://instagram.com/mobayilo", "label": "Instagram" }
+  ],
+  "bottom": { "left": "Made with care by Mobayilo", "right": "© 2026 Mobayilo" }
+}
